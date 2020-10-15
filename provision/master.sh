@@ -71,25 +71,6 @@ class { 'hiera':
 }
 EOF
 
-# Place the Puppet Server Configuration
-  cat > /var/tmp/configure_puppet_server.pp << EOF
-#####                   #####
-## Configure Puppet Master ##
-#####                   #####
-
-ini_setting { 'Master Agent Server':
-  section => 'agent',
-  setting => 'server',
-  value   => 'master.puppet.vm',
-}
-
-ini_setting { 'Master Agent CertName':
-  section => 'agent',
-  setting => 'certname',
-  value   => 'master.puppet.vm',
-}
-EOF
-
 # Place the directory environments config file
 cat > /var/tmp/configure_directory_environments.pp << 'EOF'
 #####                            #####
@@ -133,7 +114,7 @@ class { 'r10k':
   version => '3.1.1',
   sources => {
     'puppet' => {
-      'remote'  => '//github.com/cvquesty/ossec_control_repo',
+      'remote'  => 'https://github.com/cvquesty/ossec_control_repo',
       'basedir' => "${::settings::codedir}/environments",
       'prefix'  => false,
     }
@@ -153,9 +134,6 @@ EOF
 
 # Then Configure Hiera
 /opt/puppetlabs/puppet/bin/puppet apply /var/tmp/configure_hiera.pp
-
-# Run the Puppet Server Configuration
-/opt/puppetlabs/puppet/bin/puppet apply /var/tmp/configure_puppet_server.pp
 
 # Configure R10k
 /opt/puppetlabs/puppet/bin/puppet apply /var/tmp/configure_r10k.pp
