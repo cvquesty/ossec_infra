@@ -131,6 +131,8 @@ EOF
 # Stop and disable iptables
   /bin/systemctl stop firewalld.service
   /bin/systemctl disable firewalld.service
+  /bin/systemctl stop iptables.service
+  /bin/systemctl disable iptables.service
 
 # Then Configure Hiera
 /opt/puppetlabs/puppet/bin/puppet apply /var/tmp/configure_hiera.pp
