@@ -33,5 +33,9 @@ EOF
 # Do initial Puppet Run
 /opt/puppetlabs/puppet/bin/puppet agent -t
 
+# Install the OSSEC Repo
+yum -y install wget
+wget -q -O - https://updates.atomicorp.com/installers/atomic | sudo NON_INT=1 bash
+
 # Bounce the machine one more time for service
 /usr/sbin/reboot
