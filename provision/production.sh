@@ -25,6 +25,7 @@ yum -y update
 
 # Create a puppet.conf
 cat >> /etc/puppetlabs/puppet/puppet.conf << 'EOF'
+environment = production
 certname = production.puppet.vm
 server = master.puppet.vm
 EOF

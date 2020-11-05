@@ -128,11 +128,9 @@ cat > /etc/puppetlabs/puppet/autosign.conf << 'EOF'
 *.puppet.vm
 EOF
 
-# Stop and disable iptables
+# Stop and disable firewalld
   /bin/systemctl stop firewalld.service
   /bin/systemctl disable firewalld.service
-  /bin/systemctl stop iptables.service
-  /bin/systemctl disable iptables.service
 
 # Then Configure Hiera
 /opt/puppetlabs/puppet/bin/puppet apply /var/tmp/configure_hiera.pp
@@ -153,3 +151,7 @@ EOF
 
 # Do Initial Puppet Run
 /opt/puppetlabs/puppet/bin/puppet agent -t
+
+# Disable IPTables
+  /bin/systemctl stop iptables.service
+  /bin/systemctl disable iptables.service
