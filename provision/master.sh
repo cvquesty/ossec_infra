@@ -153,3 +153,6 @@ EOF
 
 # Do Initial Puppet Run
 /opt/puppetlabs/puppet/bin/puppet agent -t
+
+# Bounce the machine one more time for service
+/usr/sbin/reboot
