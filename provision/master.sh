@@ -7,7 +7,7 @@
 #
 #   DESCRIPTION: Puppet VM Provisioning script for Vagrant
 #
-#        AUTHOR: YOUR NAME (Jerald Sheets),
+#        AUTHOR: Jerald Sheets
 #  ORGANIZATION: S & S Consulting Group
 #       CREATED: 10/08/2020 16:14
 #===============================================================================
