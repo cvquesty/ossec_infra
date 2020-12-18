@@ -1,4 +1,17 @@
 #!/bin/bash
+#===============================================================================
+#
+#          FILE: development.sh
+#
+#         USAGE: ./development.sh
+#
+#   DESCRIPTION: Puppet VM Provisioning script for Vagrant to build development
+#                node that includes a Puppet agent and an OSSEC client
+#
+#        AUTHOR: Jerald Sheets
+#  ORGANIZATION: S & S Consulting Group
+#       CREATED: 10/08/2020 16:14
+#===============================================================================
 
 # Kill the erroneous entry in /etc/hosts (Introduced by Virtualbox)
 /bin/sed -i '/127.0.1.1 development.puppet.vm development/d' /etc/hosts
