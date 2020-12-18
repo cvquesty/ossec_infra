@@ -53,12 +53,12 @@ wget -q -O - https://updates.atomicorp.com/installers/atomic | sudo NON_INT=1 ba
 # Bounce the machine one more time for service
 /usr/sbin/reboot
 
-  # Install OSSEC Repo
-  yum -y install wget
-  wget -q -O - https://updates.atomicorp.com/installers/atomic | sudo NON_INT=1 bash
+# Install OSSEC Repo
+yum -y install wget
+wget -q -O - https://updates.atomicorp.com/installers/atomic | sudo NON_INT=1 bash
 
-  # Install OSSEC Prerequisites
-  yum -y install zlib-devel pcre2-devel make gcc sqlite-devel openssl-devel libevent-devel
+# Install OSSEC Prerequisites
+yum -y install zlib-devel pcre2-devel make gcc sqlite-devel openssl-devel libevent-devel
 
-  # Install OSSEC agent and server
-  yum -y install ossec-hids ossec-hids-agent
+# Install OSSEC agent and server
+yum -y install ossec-hids ossec-hids-agent
