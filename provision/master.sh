@@ -5,7 +5,9 @@
 #
 #         USAGE: ./master.sh
 #
-#   DESCRIPTION: Puppet VM Provisioning script for Vagrant
+#   DESCRIPTION: Puppet VM Provisioning script for Vagrant to build OSSEC Infra
+#                that includes a Puppet Master and agents as well as OSSEC
+#                server and agents.
 #
 #        AUTHOR: Jerald Sheets
 #  ORGANIZATION: S & S Consulting Group
